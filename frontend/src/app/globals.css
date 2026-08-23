@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+/*
+  Paytm Business Health AI: design tokens.
+
+  A light, high-trust fintech palette. Deliberately restrained: one blue for
+  brand and interaction, and a strict semantic scale where colour always means
+  the same thing: green is a gain, amber is a warning, red is reserved for
+  genuine problems so it keeps its weight.
+*/
+
+:root {
+  /* This product commits to a single light appearance, matching the merchant
+     app it lives inside. Every colour is stated explicitly so nothing is
+     inherited from the host theme. */
+  color-scheme: light;
+
+  --background: #f4f6fb;
+  --surface: #ffffff;
+  --surface-muted: #f8fafc;
+  --foreground: #0b1524;
+  --muted: #5b6b82;
+  --subtle: #8a99ad;
+  --border: #e4e9f2;
+  --border-strong: #d3dbe8;
+
+  --brand: #0d4fb8;
+  --brand-strong: #06308a;
+  --brand-soft: #e8f0ff;
+  --accent: #00b9f5;
+
+  --positive: #0f8f5f;
+  --positive-soft: #e3f7ee;
+  --warning: #b26a00;
+  --warning-soft: #fdf1dd;
+  --negative: #c62828;
+  --negative-soft: #fdeaea;
+
+  /* Data-viz series. Validated as a categorical pair against the white
+     chart surface: CVD deltaE 24.7, normal-vision 33.6, both above 3:1. */
+  --series-current: #2a78d6;
+  --series-baseline: #eb6834;
+  --grid: #eef2f8;
+
+  --shadow-sm: 0 1px 2px rgba(11, 21, 36, 0.05);
+  --shadow-md: 0 4px 16px rgba(11, 21, 36, 0.07);
+  --shadow-lg: 0 12px 32px rgba(11, 21, 36, 0.1);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  --color-brand: var(--brand);
+  --color-brand-strong: var(--brand-strong);
+  --color-brand-soft: var(--brand-soft);
+  --color-accent: var(--accent);
+
+  --color-series-current: var(--series-current);
+  --color-series-baseline: var(--series-baseline);
+  --color-grid: var(--grid);
+
+  --color-positive: var(--positive);
+  --color-positive-soft: var(--positive-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-negative: var(--negative);
+  --color-negative-soft: var(--negative-soft);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Tabular figures keep metric columns from jittering as values change. */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: #e9eef6;
+}
+
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0,
+    rgba(255, 255, 255, 0.65) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shimmer 1.6s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton::after {
+    animation: none;
+  }
+}
+
+::selection {
+  background: var(--brand-soft);
+}

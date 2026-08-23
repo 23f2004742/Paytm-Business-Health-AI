@@ -1,0 +1,16 @@
+# Raspberry Pi client dependencies. Deliberately tiny.
+#
+# Nothing here needs a compiler on a Pi: all four have piwheels/manylinux
+# aarch64 wheels. Total install is a few MB and under a minute.
+#
+# System package needed first for audio:
+#     sudo apt install -y libportaudio2
+
+requests>=2.31.0        # the only hard dependency
+numpy>=1.24.0           # buffers and the RMS voice gate
+sounddevice>=0.4.6      # microphone capture (needs libportaudio2)
+
+# NOT installed here, on purpose:
+#   faster-whisper  - only if LOCAL_TRANSCRIPTION=true; see README_PI.md
+#   torch / ollama  - never. The Pi is a sensor, not an inference box.
+#   soundfile       - WAV writing uses the standard library `wave` module.

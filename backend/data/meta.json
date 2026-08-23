@@ -1,0 +1,22 @@
+{
+  "merchant_id": "PAYTM_M_001",
+  "merchant_name": "Raj's Tea & Snacks",
+  "category": "Food & Beverage",
+  "location": "Hyderabad, Telangana",
+  "owner_name": "Raj",
+  "as_of_date": "2026-08-21",
+  "start_date": "2026-03-25",
+  "days": 150,
+  "business_hours": "8:00 - 22:00",
+  "transaction_count": 17597,
+  "weak_tuesday": "2026-08-18",
+  "seed": 20260821,
+  "knobs": {
+    "evening_drop": 0.38,
+    "weekend_boost": 1.22,
+    "tuesday_factor": 0.84,
+    "repeat_factor": 0.82,
+    "ticket_lift": 1.055
+  },
+  "generated_at": "2026-08-21T14:16:39"
+}

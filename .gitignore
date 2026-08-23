@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+
+# Environment
+.env
+.env.local
+.env*.local
+
+# Generated runtime state
+backend/data/campaigns.json
+backend/data/restock_alerts.json
+backend/data/shop_events.json
+backend/data/shop_interactions.json
+backend/data/expenses.json
+backend/data/khata.json
+backend/data/business_activity.json
+backend/data/device_status.json
+
+# Archived projects are kept locally but are not part of the active repository
+archive/
+
+# Raspberry Pi runtime
+raspberry-pi/temp_audio/
+raspberry-pi/spool/
+raspberry-pi/.env
+*.wav
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+backend/data/munim.db
+backend/data/munim.db-wal
+backend/data/munim.db-shm

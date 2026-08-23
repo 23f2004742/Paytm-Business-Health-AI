@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(claude-api)",
+      "Skill(claude-api:*)",
+      "PowerShell(python \"c:\\\\Users\\\\soumy\\\\OneDrive\\\\Desktop\\\\paytm\\\\backend\\\\data\\\\generate_data.py\")"
+    ]
+  }
+}

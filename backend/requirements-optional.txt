@@ -1,0 +1,10 @@
+# Optional backend extras.
+#
+# Install ONLY if you want the backend to transcribe audio itself (Mode B).
+# Without these the /api/shop-intelligence/audio endpoint still works when
+# the client sends a `transcript` form field alongside (or instead of) audio.
+#
+#   pip install -r requirements-optional.txt
+#
+# Pulls ctranslate2, onnxruntime and av: roughly 250 MB.
+faster-whisper==1.1.1
